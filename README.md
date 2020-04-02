@@ -104,7 +104,7 @@ document.onmouseup = function (e) {}
       e = e || window.event;
       // 移动，更新 box 坐标（新坐标减去diff就是实移动的距离）
       var box = document.querySelector(".box");
-      if (e.target.className.match(/box/) && dragging) {
+      if (dragging) {
           box.style.top = e.pageY - layerX +'px';
           box.style.left = e.pageX - layerY +'px';
       }
@@ -146,7 +146,7 @@ document.onmouseup = function (e) {}
       e = e || window.event;
       // 移动，更新 box 坐标（新坐标减去diff就是实移动的距离）
       var box = document.querySelector(".box");
-      if (e.target.className.match(/box/) && dragging) {
+      if (dragging) {
           box.style.top = e.pageY - layerX +'px';
           box.style.left = e.pageX - layerY +'px';
       }
@@ -184,3 +184,20 @@ document.onmouseup = function (e) {}
 1. **element.getBoundingClientRect()**  方法可以直接获取当前元素的的坐标，大小，等信息
 
 2. **每次对box进行定位后，需要重置定位属性，以免下次被影响**：box.style.left = box.style.right = box.style.top = box.style.bottom = "";
+
+## 最后
+在判断是否允许拖动或缩放时，直接判断标识即可，不要去判断鼠标是否在当前元素上，如：
+```js
+ if (dragging) {
+    box.style.top = e.pageY - layerX +'px';
+    box.style.left = e.pageX - layerY +'px';
+    }
+
+不要写成了
+
+ if (e.target.className.match(/box/) && dragging) {
+    box.style.top = e.pageY - layerX +'px';
+    box.style.left = e.pageX - layerY +'px';
+ }
+
+```

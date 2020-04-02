@@ -12,8 +12,9 @@
 <html>
 
 <head>
-    <meta charset="gb2312" />
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可拖动-可缩放矩形</title>
     <style type="text/css">
         .box {
             width: 200px;
@@ -127,7 +128,7 @@
                     }
                     e.stopPropagation();//阻止冒泡，避免传到box里面
                 }
-           
+
             };
             //  鼠标移动
             document.onmousemove = function (e) {
