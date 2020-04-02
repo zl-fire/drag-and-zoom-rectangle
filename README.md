@@ -1,5 +1,5 @@
 # drag-and-zoom-rectangle
-原生js实现的一个可拖动和可缩放的矩形
+原生js实现的一个可拖动和可缩放的矩形:演示 https://zhangluzhanglu.github.io/code/index.html
 ## 思路
 1. **拖动原理**：先把box进行定位，然后通过移动鼠标时同步修改定位即可
 
