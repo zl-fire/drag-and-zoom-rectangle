@@ -136,7 +136,7 @@ document.onmouseup = function (e) {}
     }
 ```
 **缩放四个角原理：先获取对角坐标进行固定定位，然后鼠标移动时赋值新的宽高开始改变**
-![](https://github.com/zhangluzhanglu/drag-and-zoom-rectangle/blob/master/img/down.png?raw=true)
+![图片](https://github.com/zhangluzhanglu/drag-and-zoom-rectangle/blob/master/img/down.png?raw=true "图片")
 ```js
  }
 
