@@ -134,7 +134,7 @@
                 e = e || window.event;
                 // 移动，更新 box 坐标（新坐标减去diff就是实际移动的距离）
                 var box = document.querySelector(".box");
-                if (e.target.className.match(/box/) && dragging) {
+                if (dragging) {
                     box.style.top = e.pageY - layerX + 'px';
                     box.style.left = e.pageX - layerY + 'px';
                 }
