@@ -121,7 +121,6 @@ document.onmouseup = function (e) {}
 1. 鼠标点在四个角上时，先获取对角坐标并进行绝对定位，
 2. 然后在通过移动鼠标时同步修改box的宽高即可
 ---
- **代码较多，这里为了看完整代码就直接上图**
 ```js
   //  鼠标按下
  document.onmousedown = function (e) {
@@ -136,8 +135,9 @@ document.onmouseup = function (e) {}
     }
 ```
 **缩放四个角原理：先获取对角坐标进行固定定位，然后鼠标移动时赋值新的宽高开始改变**
+
+*代码较多，这里为了看完整代码就直接上图*
 ![图片](https://github.com/zhangluzhanglu/drag-and-zoom-rectangle/blob/master/img/down.png?raw=true "图片")
- **【图片】**
 ```js
  }
 
