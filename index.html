@@ -3,7 +3,7 @@
     思路：
       拖动原理：先把box进行定位，然后通过移动鼠标时同步修改定位即可
       缩放原理：鼠标点在四个角上时，先获取对角坐标并进行绝对定位，然后在通过移动鼠标时同步修改box的宽高即可
- 注意：
+    注意：
     1. element.getBoundingClientRect()  方法可以直接获取当前元素的的坐标，大小，等信息
     2. 每次对box进行定位后，需要重置定位属性，以免下次被影响：box.style.left = box.style.right = box.style.top = box.style.bottom = "";
 
@@ -56,13 +56,14 @@
     <!-- 拖动 -->
     <script type="text/javascript">
         window.onload = function (e) {
-            e = e || window.event;
+
             var dragging = false;// 是否拖动，默认不
             var zoom = "";// 是否缩放标识，默认不允许
             var layerX, layerY;//为鼠标初始坐标与 box 左上角坐标之距离
             var AngCooX, AngCooY;// 缩放时，对角坐标位置（box固定定位位置）
             // 鼠标按下
             document.onmousedown = function (e) {
+                e = e || window.event;
                 // 为了拖动box，计算鼠标按下那刻的layer坐标
                 if (e.target.className.match(/box/)) {
                     // 允许拖动
@@ -126,9 +127,11 @@
                     }
                     e.stopPropagation();//阻止冒泡，避免传到box里面
                 }
+           
             };
             //  鼠标移动
             document.onmousemove = function (e) {
+                e = e || window.event;
                 // 移动，更新 box 坐标（新坐标减去diff就是实际移动的距离）
                 var box = document.querySelector(".box");
                 if (e.target.className.match(/box/) && dragging) {
